@@ -1,0 +1,23 @@
+.image-container {
+    display: flex;
+    gap: 20px; 
+    justify-content: center; 
+    align-items: flex-start;
+
+}
+
+.item {
+    text-align: center; 
+    flex: 1; 
+    font-family:'Courier New', Courier, monospace;
+}
+
+.item img {
+    width: 300px; 
+    height: auto;
+    display: block; 
+    margin: 20px;
+    border: 20px;
+    padding: 5px;
+    border: radius 4px;
+}
