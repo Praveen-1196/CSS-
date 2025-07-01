@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BR Architects</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f1f1f1;
+      color: #000;
+    }
+
+    .navbar {
+      background-color: #000;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 24px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 999;
+    }
+
+    .navbar .logo {
+      font-size: 20px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    .navbar .logo span {
+      background-color: white;
+      color: black;
+      padding: 4px 8px;
+      margin-right: 6px;
+    }
+
+    .navbar .nav-links a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      padding: 8px 12px;
+
+    }
+
+    .navbar .nav-links a:hover {
+      background-color: #444;
+    }
+
+    .hero {
+      margin-top: 60px;
+      height: 100vh;
+      background: url("https://www.w3schools.com/w3images/architect.jpg") no-repeat center center;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-text {
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 20px;
+      text-align: center;
+    }
+
+    .hero-text h1 {
+      font-size: 48px;
+      letter-spacing: 4px;
+    }
+
+    .hero-text h1 span {
+      background-color: black;
+      color: white;
+      padding: 8px 16px;
+    }
+
+    .section {
+      padding: 60px 20px;
+      width: 100%;
+      margin: auto;
+      box-sizing: border-box;
+    }
+
+    .section h2 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 10px;
+    }
+
+ 
+    .portfolio-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      padding: 0 20px;
+      box-sizing: border-box;
+    }
+
+    .portfolio-item {
+      position: relative;
+      flex: 0 0 calc(25% - 20px);
+      overflow: hidden;
+      border-radius: 4px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    }
+
+    .portfolio-item img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .portfolio-item p {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: auto;
+      margin: 0;
+      padding: 8px 12px;
+      background-color: black;
+      color: white;
+      font-weight: bold;
+      font-size: 16px;
+      opacity: 0.8;
+      box-sizing: border-box;
+    }
+
+    .about p {
+      margin-bottom: 40px;
+      line-height: 1.6;
+    }
+
+    .team-row {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .team-member {
+      flex: 1;
+      min-width: 220px;
+      background-color: white;
+      border: 1px solid #ccc;
+    }
+
+    .team-member img {
+      width: 100%;
+      height: auto;
+    }
+
+    .team-member .info {
+      padding: 16px;
+    }
+
+    .team-member h3 {
+      margin-bottom: 8px;
+    }
+
+    .team-member p {
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+
+    .team-member button {
+      background-color: #f1f1f1;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .team-member button:hover {
+      background-color: #ccc;
+    }
+
+
+    #contact .section {
+      width: 100%;
+      margin: 0 auto;
+      padding: 60px 20px;
+      box-sizing: border-box;
+    }
+
+    .contact-form {
+      width: 100%;
+      padding: 0 20px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+      border-radius: 4px;
+      font-family: Arial, sans-serif;
+    }
+
+    .contact-form button {
+      width: 100%;
+      padding: 14px;
+      background-color: black;
+      color: white;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    .contact-form button:hover {
+      background-color: #444;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #000;
+      color: white;
+    }
+
+
+@media (max-width: 1024px) {
+  .portfolio-item {
+    flex: 0 0 calc(50% - 20px);
+  }
+
+  .team-row {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .team-member {
+    flex: 0 0 calc(50% - 20px);
+  }
+}
+
+
+@media (max-width: 767px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 12px;
+  }
+
+  .navbar .nav-links {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .navbar .nav-links a {
+    margin-left: 0;
+    padding: 10px 0;
+  }
+
+  .hero-text h1 {
+    font-size: 32px;
+  }
+
+  .portfolio-item {
+    flex: 0 0 100%;
+  }
+
+  .team-member {
+    flex: 0 0 100%;
+  }
+
+  .contact-form {
+    padding: 0;
+  }
+}
+
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <div class="logo">
+      <span>BR</span> Architects
+    </div>
+    <div class="nav-links">
+      <a href="#portfolio">Portfolio</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+
+
+  <div class="hero" id="home">
+    <div class="hero-text">
+      <h1><span>BR</span> Architects</h1>
+    </div>
+  </div>
+
+  <div class="section" id="portfolio">
+    <h2>Portfolio</h2>
+    <div class="portfolio-row">
+      <div class="portfolio-item">
+        <img src="https://www.w3schools.com/w3images/house5.jpg" alt="Summer House" />
+        <p>Summer House</p>
+      </div>
+      <div class="portfolio-item">
+        <img src="https://www.w3schools.com/w3images/house2.jpg" alt="Brick House" />
+        <p>Brick House</p>
+      </div>
+      <div class="portfolio-item">
+        <img src="https://www.w3schools.com/w3images/house3.jpg" alt="Renovated" />
+        <p>Renovated</p>
+      </div>
+      <div class="portfolio-item">
+        <img src="https://www.w3schools.com/w3images/house4.jpg" alt="Barn House" />
+        <p>Barn House</p>
+      </div>
+      <div class="portfolio-item">
+        <img src="https://www.w3schools.com/w3images/house2.jpg" alt="Summer House" />
+        <p>Summer House</p>
+      </div>
+      <div class="portfolio-item">
+        <img src="https://www.w3schools.com/w3images/house5.jpg" alt="Modern House" />
+        <p>Modern House</p>
+      </div>
+      <div class="portfolio-item">
+        <img src="https://www.w3schools.com/w3images/house4.jpg" alt="Classic House" />
+        <p>Classic House</p>
+      </div>
+      <div class="portfolio-item">
+        <img src="https://www.w3schools.com/w3images/house3.jpg" alt="Contemporary House" />
+        <p>Contemporary House</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section about" id="about">
+    <h2>About</h2>
+    <p>We are a team of passionate architects with a vision for sustainable, beautiful, and functional spaces. Our work spans residential, commercial, and public projects — each designed with care and creativity.</p>
+    <div class="team-row">
+      <div class="team-member">
+        <img src="https://www.w3schools.com/w3images/team2.jpg" alt="John Doe">
+        <div class="info">
+          <h3>John Doe</h3>
+          <p class="role">CEO & Founder</p>
+          <p>John is the visionary behind BR Architects with 20+ years of experience in the industry.</p>
+          <button>Contact</button>
+        </div>
+      </div>
+      <div class="team-member">
+        <img src="https://www.w3schools.com/w3images/team1.jpg" alt="Jane Doe">
+        <div class="info">
+          <h3>Jane Doe</h3>
+          <p class="role">Architect</p>
+          <p>Jane leads our design team with a flair for modern and minimalist aesthetics.</p>
+          <button>Contact</button>
+        </div>
+      </div>
+      <div class="team-member">
+        <img src="https://www.w3schools.com/w3images/team3.jpg" alt="Mike Ross">
+        <div class="info">
+          <h3>Mike Ross</h3>
+          <p class="role">Project Manager</p>
+          <p>Mike ensures every project runs smoothly from blueprint to build.</p>
+          <button>Contact</button>
+        </div>
+      </div>
+      <div class="team-member">
+        <img src="https://www.w3schools.com/w3images/team4.jpg" alt="Emily Smith">
+        <div class="info">
+          <h3>Emily Smith</h3>
+          <p class="role">Interior Designer</p>
+          <p>Emily crafts interiors that are both functional and inspiring.</p>
+          <button>Contact</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="contact" class="section">
+    <h2>Contact</h2>
+    <form class="contact-form">
+      <input type="text" placeholder="Name"  />
+      <input type="email" placeholder="Email"  />
+      <input type="text" placeholder="Subject" />
+      <textarea placeholder="Message" rows="5"></textarea>
+      <button type="submit">SEND MESSAGE</button>
+    </form>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 BR Architects. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
